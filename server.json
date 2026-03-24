@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.jeenyjai/mcp-test-utils",
+  "name": "io.github.JeenyJAI/mcp-test-utils",
   "title": "MCP Test Utils",
   "description": "Desktop UI automation for AI agents: screenshots, windows, mouse, keyboard, UI Automation, OCR",
   "repository": {

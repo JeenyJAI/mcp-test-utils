@@ -159,7 +159,7 @@ Free and unrestricted. If you find it useful — [jeenyjai.github.io](https://je
 
 Copyright 2026 JeenyJAI. All rights reserved.
 
-<!-- mcp-name: io.github.jeenyjai/mcp-test-utils -->
+<!-- mcp-name: io.github.JeenyJAI/mcp-test-utils -->
 
 ---
 
