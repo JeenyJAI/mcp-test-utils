@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.jeenyjai/mcp-test-utils",
   "title": "MCP Test Utils",
-  "description": "Desktop UI automation for AI agents — screenshots, window management, mouse, keyboard, UI Automation tree, OCR. Single binary, no dependencies.",
+  "description": "Desktop UI automation for AI agents: screenshots, windows, mouse, keyboard, UI Automation, OCR",
   "repository": {
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
@@ -12,6 +12,7 @@
     {
       "registryType": "mcpb",
       "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.6.0/mcp-test-utils.exe",
+      "version": "3.6.0",
       "fileSha256": "453b62f5b60d85908d3e5e610062518474ee0d7ab1f3731d542b21988e803d73",
       "transport": {
         "type": "stdio"
