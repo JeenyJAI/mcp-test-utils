@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jeenyjai/mcp-test-utils",
+  "title": "MCP Test Utils",
+  "description": "Desktop UI automation for AI agents — screenshots, window management, mouse, keyboard, UI Automation tree, OCR. Single binary, no dependencies.",
+  "repository": {
+    "url": "https://github.com/JeenyJAI/mcp-test-utils",
+    "source": "github"
+  },
+  "version": "3.6.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.6.0/mcp-test-utils.exe",
+      "fileSha256": "453b62f5b60d85908d3e5e610062518474ee0d7ab1f3731d542b21988e803d73",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "MCP_LOG_DIR",
+          "description": "Directory for logging sessions (opt-in). Without it, logging tools are hidden.",
+          "isRequired": false
+        },
+        {
+          "name": "MCP_LOG_MAX_MB",
+          "description": "Session size limit in MB. Warning on exceed.",
+          "isRequired": false,
+          "default": "500"
+        },
+        {
+          "name": "MCP_LOG_RETAIN_DAYS",
+          "description": "Auto-delete log sessions older than N days. 0 to disable.",
+          "isRequired": false,
+          "default": "30"
+        }
+      ]
+    }
+  ]
+}
