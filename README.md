@@ -2,7 +2,7 @@
 
 ## 100% AI Code · Human Reviewed
 
-[![version: 3.6.0](https://img.shields.io/badge/version-3.6.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 16](https://img.shields.io/badge/tools-16-green.svg)](#tools-16) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils) [![Support](https://img.shields.io/badge/Support-%E2%9D%A4-ff69b4?style=flat&labelColor=grey)](https://jeenyjai.github.io/)
+[![version: 3.9.0](https://img.shields.io/badge/version-3.9.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 17](https://img.shields.io/badge/tools-17-green.svg)](#tools-17) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils) [![Support](https://img.shields.io/badge/Support-%E2%9D%A4-ff69b4?style=flat&labelColor=grey)](https://jeenyjai.github.io/)
 
 MCP server for automated desktop UI testing. A single binary — no runtime, no dependencies, no installation.
 
@@ -29,7 +29,7 @@ Fully autonomous, no user involvement required.
 | macOS arm64 | ⏳ Planned |
 | Linux x64 | ⏳ Planned |
 
-## Tools (16)
+## Tools (17)
 
 ### Vision
 
@@ -64,6 +64,12 @@ Fully autonomous, no user involvement required.
 | Tool | Description |
 |---|---|
 | `list_ui_elements` | UI Automation tree — buttons, fields, menus with exact coordinates |
+
+### Agent Guide
+
+| Tool | Description |
+|---|---|
+| `get_usage_guide` | Compact workflow guide for LLM agents — precision clicking, coordinate metadata, quality tips |
 
 ### Session Logging
 
