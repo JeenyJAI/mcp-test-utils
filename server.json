@@ -13,7 +13,7 @@
       "registryType": "mcpb",
       "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.9.0/mcp-test-utils.exe",
       "version": "3.9.0",
-      "fileSha256": "031476dcaf8ccfe60aff09de8c38e606738841e68c9a83529abbc474f69c14f1",
+      "fileSha256": "a4a084b12bb2ccef597bca866a8cda9ce00379f726d7d5be7e879fc4c6bfb225",
       "transport": {
         "type": "stdio"
       },
