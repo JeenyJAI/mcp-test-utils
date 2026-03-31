@@ -21,6 +21,12 @@ switches window → clicks a button → verifies → writes report
 
 Fully autonomous, no user involvement required.
 
+## Demo
+
+> 17 tools. 10 tasks. One take. [Watch on YouTube →](https://www.youtube.com/watch?v=kiICWA5zQTk)
+
+[![MCP Test Utils — Full Demo](https://img.youtube.com/vi/kiICWA5zQTk/maxresdefault.jpg)](https://www.youtube.com/watch?v=kiICWA5zQTk)
+
 ## Platforms
 
 | Platform | Status |
