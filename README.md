@@ -2,7 +2,7 @@
 
 ## 100% AI Code · Human Reviewed
 
-[![version: 3.9.0](https://img.shields.io/badge/version-3.9.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 17](https://img.shields.io/badge/tools-17-green.svg)](#tools-17) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils) [![Support](https://img.shields.io/badge/Support-%E2%9D%A4-ff69b4?style=flat&labelColor=grey)](https://jeenyjai.github.io/)
+[![version: 3.9.0](https://img.shields.io/badge/version-3.9.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 17](https://img.shields.io/badge/tools-17-green.svg)](#tools-17) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
 
 MCP server for automated desktop UI testing. A single binary — no runtime, no dependencies, no installation.
 
@@ -163,7 +163,7 @@ The server uses native Windows APIs directly — Win32 GDI for screenshots, `Sen
 - Sends no data externally
 - **Screenshots capture the entire screen** — make sure no sensitive information is visible
 
-## Support
+## Support us
 
 Free and unrestricted. If you find it useful — [jeenyjai.github.io](https://jeenyjai.github.io/)
 
