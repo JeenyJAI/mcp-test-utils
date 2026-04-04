@@ -2,13 +2,13 @@
 
 ## 100% AI Code · Human Reviewed
 
-[![version: 3.9.0](https://img.shields.io/badge/version-3.9.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 17](https://img.shields.io/badge/tools-17-green.svg)](#tools-17) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
+[![version: 3.10.0](https://img.shields.io/badge/version-3.10.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 18](https://img.shields.io/badge/tools-18-green.svg)](#tools-18) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
 
 MCP server for automated desktop UI testing. A single binary — no runtime, no dependencies, no installation.
 
 > **Windows x64 only.** macOS and Linux support is planned.
 
-Gives AI agents eyes and hands: screenshots, window management, mouse, keyboard, UI Automation, OCR.
+Gives AI agents eyes and hands: screenshots, window management, mouse, keyboard, UI Automation, OCR, file search.
 
 ## Why
 
@@ -35,7 +35,7 @@ Fully autonomous, no user involvement required.
 | macOS arm64 | ⏳ Planned |
 | Linux x64 | ⏳ Planned |
 
-## Tools (17)
+## Tools (18)
 
 ### Vision
 
@@ -71,6 +71,12 @@ Fully autonomous, no user involvement required.
 |---|---|
 | `list_ui_elements` | UI Automation tree — buttons, fields, menus with exact coordinates |
 
+### File Search
+
+| Tool | Description |
+|---|---|
+| `search_in_files` | Search text or regex in files within allowed directories (like VS Code Find in Files) |
+
 ### Agent Guide
 
 | Tool | Description |
@@ -104,7 +110,7 @@ Fully autonomous, no user involvement required.
 3. Restart Claude Desktop.
 4. In chat, try: _"Take a screenshot"_ — the agent will return an image of your desktop.
 
-### With Logging (optional)
+### With Logging and File Search (optional)
 
 ```json
 {
@@ -114,7 +120,8 @@ Fully autonomous, no user involvement required.
       "env": {
         "MCP_LOG_DIR": "D:\\path\\to\\logs",
         "MCP_LOG_MAX_MB": "500",
-        "MCP_LOG_RETAIN_DAYS": "30"
+        "MCP_LOG_RETAIN_DAYS": "30",
+        "MCP_SEARCH_DIRS": "D:\\Projects\\app1;D:\\Projects\\app2"
       }
     }
   }
@@ -140,12 +147,13 @@ Screenshots support configurable quality to balance detail and token cost:
 | `MCP_LOG_DIR` | Path for log sessions. Without it, logging tools are hidden | — |
 | `MCP_LOG_MAX_MB` | Session size limit (warning on exceed) | `500` |
 | `MCP_LOG_RETAIN_DAYS` | Auto-delete sessions older than N days. `0` to disable | `30` |
+| `MCP_SEARCH_DIRS` | Allowed directories for `search_in_files` (`;` on Windows, `:` on macOS/Linux). Without it, the tool is hidden | — |
 
 ## How It Works
 
 MCP Test Utils is a JSON-RPC 2.0 server communicating over stdin/stdout. Any MCP-compatible client launches the binary, sends tool calls, and receives structured responses (text, base64 images). Tested with Claude Desktop.
 
-The server uses native Windows APIs directly — Win32 GDI for screenshots, `SendInput` for mouse and keyboard, UI Automation COM API for element inspection, WinRT `Windows.Media.Ocr` for text recognition. No PowerShell, no external tools, no network access.
+The server uses native Windows APIs directly — Win32 GDI for screenshots, `SendInput` for mouse and keyboard, UI Automation COM API for element inspection, WinRT `Windows.Media.Ocr` for text recognition. File search uses the ripgrep engine (`grep-regex`, `grep-searcher`, `ignore`) — cross-platform, no external dependencies. No PowerShell, no external tools, no network access.
 
 ## Use Cases
 
@@ -154,6 +162,7 @@ The server uses native Windows APIs directly — Win32 GDI for screenshots, `Sen
 - **Accessibility audit** — scan UI Automation tree for missing labels or roles
 - **Visual regression** — screenshot comparison across releases
 - **Data extraction** — OCR text from applications that don't expose APIs
+- **Code search** — find patterns across multiple projects without leaving the agent session
 
 ## Security
 
@@ -162,6 +171,7 @@ The server uses native Windows APIs directly — Win32 GDI for screenshots, `Sen
 - Writes nothing to disk (except opt-in logging)
 - Sends no data externally
 - **Screenshots capture the entire screen** — make sure no sensitive information is visible
+- **File search is sandboxed** — only directories in `MCP_SEARCH_DIRS` are accessible
 
 ## Support us
 

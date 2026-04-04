@@ -7,13 +7,13 @@
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
   },
-  "version": "3.9.0",
+  "version": "3.10.0",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.9.0/mcp-test-utils.exe",
-      "version": "3.9.0",
-      "fileSha256": "a4a084b12bb2ccef597bca866a8cda9ce00379f726d7d5be7e879fc4c6bfb225",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.10.0/mcp-test-utils.exe",
+      "version": "3.10.0",
+      "fileSha256": "4d007772a19b643d05ff8034c9dd3ac09d491af4bcc448278249a182fdf872bf",
       "transport": {
         "type": "stdio"
       },
@@ -34,6 +34,11 @@
           "description": "Auto-delete log sessions older than N days. 0 to disable.",
           "isRequired": false,
           "default": "30"
+        },
+        {
+          "name": "MCP_SEARCH_DIRS",
+          "description": "Allowed directories for search_in_files (semicolon-separated). Without it, the tool is hidden.",
+          "isRequired": false
         }
       ]
     }
