@@ -7,13 +7,13 @@
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
   },
-  "version": "3.10.0",
+  "version": "3.10.1",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.10.0/mcp-test-utils.exe",
-      "version": "3.10.0",
-      "fileSha256": "4d007772a19b643d05ff8034c9dd3ac09d491af4bcc448278249a182fdf872bf",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.10.1/mcp-test-utils.exe",
+      "version": "3.10.1",
+      "fileSha256": "8dc91b1090e961c10e9d2fe6e26cacb5925e497a7c33123b2c81f4ef69cc61e8",
       "transport": {
         "type": "stdio"
       },

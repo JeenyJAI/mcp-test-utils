@@ -2,7 +2,7 @@
 
 ## 100% AI Code · Human Reviewed
 
-[![version: 3.10.0](https://img.shields.io/badge/version-3.10.0-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 18](https://img.shields.io/badge/tools-18-green.svg)](#tools-18) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
+[![version: 3.10.1](https://img.shields.io/badge/version-3.10.1-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 19](https://img.shields.io/badge/tools-19-green.svg)](#tools-19) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
 
 MCP server for automated desktop UI testing. A single binary — no runtime, no dependencies, no installation.
 
@@ -23,9 +23,29 @@ Fully autonomous, no user involvement required.
 
 ## Demo
 
-> 17 tools. 10 tasks. One take. [Watch on YouTube →](https://www.youtube.com/watch?v=kiICWA5zQTk)
+> 10 tasks. One take. [Watch on YouTube →](https://www.youtube.com/watch?v=kiICWA5zQTk)
 
 [![MCP Test Utils — Full Demo](https://img.youtube.com/vi/kiICWA5zQTk/maxresdefault.jpg)](https://www.youtube.com/watch?v=kiICWA5zQTk)
+
+## MCP Test Utils vs Anthropic Computer Use
+
+Claude Cowork now includes built-in [Computer Use](https://claude.com/blog/dispatch-and-computer-use) — Claude takes screenshots and clicks through interfaces visually. It works with zero setup. MCP Test Utils takes a different approach: instead of guessing where to click from a screenshot, it reads the actual UI structure through Windows APIs.
+
+| | MCP Test Utils | Computer Use |
+|---|---|---|
+| **Click precision** | Exact — UI Automation API | Visual estimate ±3–5 px |
+| **Speed & token cost** | Fast, low cost — text responses | Slower, costly — image on every step |
+| **UI structure** | Full tree: roles, states, coordinates | Not available |
+| **OCR** | Word-level coordinates, multi-language | Not available (model vision only) |
+| **Window management** | API-based, window-relative coords | Visual navigation |
+| **File search** | ripgrep engine built-in | Not available |
+| **Session logging** | JSONL + screenshots | Not available |
+| **Visual analysis** | ✅ Same Claude model, full-res 1:1 | ✅ Same Claude model |
+| **Setup** | Download binary, add to config | Built-in, one toggle |
+| **Mobile / Dispatch** | — | ✅ Tasks from phone |
+| **Cross-platform** | Windows (macOS/Linux planned) | macOS + Windows |
+
+MCP Test Utils is faster, more precise, and cheaper per action. Computer Use is easier to start and works across platforms. They complement each other.
 
 ## Platforms
 
@@ -35,7 +55,7 @@ Fully autonomous, no user involvement required.
 | macOS arm64 | ⏳ Planned |
 | Linux x64 | ⏳ Planned |
 
-## Tools (18)
+## Tools (19)
 
 ### Vision
 
@@ -76,6 +96,7 @@ Fully autonomous, no user involvement required.
 | Tool | Description |
 |---|---|
 | `search_in_files` | Search text or regex in files within allowed directories (like VS Code Find in Files) |
+| `find_files` | Find files and directories by name pattern (glob), like "Go to File" |
 
 ### Agent Guide
 
