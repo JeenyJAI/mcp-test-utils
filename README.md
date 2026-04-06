@@ -33,12 +33,12 @@ Claude Cowork now includes built-in [Computer Use](https://claude.com/blog/dispa
 
 | | MCP Test Utils | Computer Use |
 |---|---|---|
-| **Click precision** | Exact — UI Automation API | Visual estimate ±3–5 px |
+| **Click precision** | Exact — UI Automation API | Visual estimate from screenshot |
 | **Speed & token cost** | Fast, low cost — text responses | Slower, costly — image on every step |
 | **UI structure** | Full tree: roles, states, coordinates | Not available |
 | **OCR** | Word-level coordinates, multi-language | Not available (model vision only) |
 | **Window management** | API-based, window-relative coords | Visual navigation |
-| **File search** | ripgrep engine built-in | Not available |
+| **File search** | Ripgrep engine built-in | Not available |
 | **Session logging** | JSONL + screenshots | Not available |
 | **Visual analysis** | ✅ Same Claude model, full-res 1:1 | ✅ Same Claude model |
 | **Setup** | Download binary, add to config | Built-in, one toggle |
