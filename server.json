@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.JeenyJAI/mcp-test-utils",
   "title": "MCP Test Utils",
-  "description": "Desktop UI automation for AI agents: screenshots, windows, mouse, keyboard, UI Automation, OCR",
+  "description": "Desktop UI automation for AI agents: screenshots, windows, mouse, keyboard, UI Automation, OCR, file search. Clicks by element id that are re-located and verified before they land, wait_for instead of sleeps, batch with find/assert steps, live call log in the tray.",
   "repository": {
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
   },
-  "version": "3.10.1",
+  "version": "3.25.1",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.10.1/mcp-test-utils.exe",
-      "version": "3.10.1",
-      "fileSha256": "8dc91b1090e961c10e9d2fe6e26cacb5925e497a7c33123b2c81f4ef69cc61e8",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.25.1/mcp-test-utils.exe",
+      "version": "3.25.1",
+      "fileSha256": "13cbbb7648fbda239c27d016a2dd8945d88d37dcf1c6d9d804b0ecb2861eb491",
       "transport": {
         "type": "stdio"
       },
@@ -38,6 +38,11 @@
         {
           "name": "MCP_SEARCH_DIRS",
           "description": "Allowed directories for search_in_files (semicolon-separated). Without it, the tool is hidden.",
+          "isRequired": false
+        },
+        {
+          "name": "MCP_NOTIFY",
+          "description": "Set to off to hide the tray icon and the live call log window.",
           "isRequired": false
         }
       ]

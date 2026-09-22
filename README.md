@@ -1,8 +1,6 @@
 # MCP Test Utils
 
-## 100% AI Code · Human Reviewed
-
-[![version: 3.10.1](https://img.shields.io/badge/version-3.10.1-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 19](https://img.shields.io/badge/tools-19-green.svg)](#tools-19) [![AI generated: 100%](https://img.shields.io/badge/AI%20generated-100%25-purple.svg)](https://github.com/JeenyJAI/mcp-test-utils)
+[![version: 3.25.1](https://img.shields.io/badge/version-3.25.1-blue.svg)](https://github.com/JeenyJAI/mcp-test-utils/releases) [![tools: 21](https://img.shields.io/badge/tools-21-green.svg)](#tools-21)
 
 MCP server for automated desktop UI testing. A single binary — no runtime, no dependencies, no installation.
 
@@ -23,9 +21,11 @@ Fully autonomous, no user involvement required.
 
 ## Demo
 
-> 10 tasks. One take. [Watch on YouTube →](https://www.youtube.com/watch?v=kiICWA5zQTk)
+> **3.25.1** — a VS Code form filled, submitted and verified in a couple of minutes. [Watch on YouTube →](https://youtu.be/2md9g19WjUM)
 
-[![MCP Test Utils — Full Demo](https://img.youtube.com/vi/kiICWA5zQTk/maxresdefault.jpg)](https://www.youtube.com/watch?v=kiICWA5zQTk)
+[![MCP Test Utils 3.25.1 — VS Code demo](https://img.youtube.com/vi/2md9g19WjUM/maxresdefault.jpg)](https://youtu.be/2md9g19WjUM)
+
+> **3.10.1** — setup, configuration and the basic tools: 10 tasks in one take. [Watch on YouTube →](https://www.youtube.com/watch?v=kiICWA5zQTk)
 
 ## MCP Test Utils vs Anthropic Computer Use
 
@@ -39,7 +39,9 @@ Claude Cowork now includes built-in [Computer Use](https://claude.com/blog/dispa
 | **OCR** | Word-level coordinates, multi-language | Not available (model vision only) |
 | **Window management** | API-based, window-relative coords | Visual navigation |
 | **File search** | Ripgrep engine built-in | Not available |
-| **Session logging** | JSONL + screenshots | Not available |
+| **Session logging** | JSONL + screenshots, live log in the tray | Not available |
+| **Verified clicks** | By element id, refused if covered | Visual estimate |
+| **Waiting & batching** | `wait_for`, `batch` with `assert` | Not available |
 | **Visual analysis** | ✅ Same Claude model, full-res 1:1 | ✅ Same Claude model |
 | **Setup** | Download binary, add to config | Built-in, one toggle |
 | **Mobile / Dispatch** | — | ✅ Tasks from phone |
@@ -55,7 +57,7 @@ MCP Test Utils is faster, more precise, and cheaper per action. Computer Use is 
 | macOS arm64 | ⏳ Planned |
 | Linux x64 | ⏳ Planned |
 
-## Tools (19)
+## Tools (21)
 
 ### Vision
 
@@ -77,8 +79,8 @@ MCP Test Utils is faster, more precise, and cheaper per action. Computer Use is 
 
 | Tool | Description |
 |---|---|
-| `mouse_click` | Click (left / right / middle) at screen or window-relative coordinates |
-| `mouse_move` | Move cursor to a point |
+| `mouse_click` | Click (left / right / middle) on a UI element by id, or at screen / window-relative coordinates |
+| `mouse_move` | Move cursor to a point or to a UI element |
 | `mouse_drag` | Drag from point A to point B |
 | `mouse_scroll` | Scroll the mouse wheel |
 | `keyboard_type` | Type text (full Unicode — Latin, Cyrillic, CJK, emoji) |
@@ -89,7 +91,14 @@ MCP Test Utils is faster, more precise, and cheaper per action. Computer Use is 
 
 | Tool | Description |
 |---|---|
-| `list_ui_elements` | UI Automation tree — buttons, fields, menus with exact coordinates |
+| `list_ui_elements` | UI Automation tree — buttons, fields, menus with ids, values, states and exact coordinates; filters by name, value, class |
+
+### Waiting and Batching
+
+| Tool | Description |
+|---|---|
+| `wait_for` | Wait for a window, an element or its state instead of sleeping |
+| `batch` | Run up to 20 tool calls in one request, with `find` and `assert` steps |
 
 ### File Search
 
@@ -169,6 +178,11 @@ Screenshots support configurable quality to balance detail and token cost:
 | `MCP_LOG_MAX_MB` | Session size limit (warning on exceed) | `500` |
 | `MCP_LOG_RETAIN_DAYS` | Auto-delete sessions older than N days. `0` to disable | `30` |
 | `MCP_SEARCH_DIRS` | Allowed directories for `search_in_files` (`;` on Windows, `:` on macOS/Linux). Without it, the tool is hidden | — |
+| `MCP_NOTIFY` | `off` hides the tray icon and the live call log window | — |
+
+## Tray Log
+
+The server shows a tray icon with a live log of tool calls — one tab per session, errors in red. `MCP_NOTIFY=off` hides it; the window position is kept in `%LOCALAPPDATA%\mcp-test-utils\notify.json`.
 
 ## How It Works
 
@@ -189,7 +203,7 @@ The server uses native Windows APIs directly — Win32 GDI for screenshots, `Sen
 
 - Responds only to requests from the MCP client
 - Opens no network ports
-- Writes nothing to disk (except opt-in logging)
+- Writes nothing to disk except opt-in logging and the tray window settings (`%LOCALAPPDATA%\mcp-test-utils\notify.json`)
 - Sends no data externally
 - **Screenshots capture the entire screen** — make sure no sensitive information is visible
 - **File search is sandboxed** — only directories in `MCP_SEARCH_DIRS` are accessible
