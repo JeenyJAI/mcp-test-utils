@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.JeenyJAI/mcp-test-utils",
   "title": "MCP Test Utils",
-  "description": "Desktop UI automation for AI agents: verified clicks, wait_for, batch, UI Automation, OCR",
+  "description": "Desktop UI automation for AI agents: verified clicks, UI Automation, OCR, batch, scenario runs",
   "repository": {
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
   },
-  "version": "3.25.1",
+  "version": "3.26.43",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.25.1/mcp-test-utils.exe",
-      "version": "3.25.1",
-      "fileSha256": "13cbbb7648fbda239c27d016a2dd8945d88d37dcf1c6d9d804b0ecb2861eb491",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.26.43/mcp-test-utils.exe",
+      "version": "3.26.43",
+      "fileSha256": "0cd0630581970652d8d9ed27999b2712a41abcaf4f429add1e24f91741e6e914",
       "transport": {
         "type": "stdio"
       },
@@ -44,6 +44,17 @@
           "name": "MCP_NOTIFY",
           "description": "Set to off to hide the tray icon and the live call log window.",
           "isRequired": false
+        },
+        {
+          "name": "MCP_INPUT_LOCK",
+          "description": "Set to off to disable the keyboard and mouse lock while the server sends input (on by default; Esc stops).",
+          "isRequired": false
+        },
+        {
+          "name": "MCP_INPUT_LOCK_STALL_MS",
+          "description": "Silence of the server in ms after which the input lock lets the input go.",
+          "isRequired": false,
+          "default": "60000"
         }
       ]
     }
