@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.JeenyJAI/mcp-test-utils",
   "title": "MCP Test Utils",
-  "description": "Desktop UI automation for AI agents: verified clicks, UI Automation, OCR, batch, scenario runs",
+  "description": "Desktop UI automation for AI agents: verified clicks, UI Automation, OCR, scenario runs, recording",
   "repository": {
     "url": "https://github.com/JeenyJAI/mcp-test-utils",
     "source": "github"
   },
-  "version": "3.26.43",
+  "version": "3.27.23",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.26.43/mcp-test-utils.exe",
-      "version": "3.26.43",
-      "fileSha256": "0cd0630581970652d8d9ed27999b2712a41abcaf4f429add1e24f91741e6e914",
+      "identifier": "https://github.com/JeenyJAI/mcp-test-utils/releases/download/v3.27.23/mcp-test-utils.exe",
+      "version": "3.27.23",
+      "fileSha256": "152b3e233fe158ee4c00f4dbbeb8baa2acfb0f66d103532a0288459c56457b03",
       "transport": {
         "type": "stdio"
       },
@@ -38,6 +38,11 @@
         {
           "name": "MCP_SEARCH_DIRS",
           "description": "Allowed directories for search_in_files (semicolon-separated). Without it, the tool is hidden.",
+          "isRequired": false
+        },
+        {
+          "name": "MCP_LAUNCH_APPS",
+          "description": "Programs (exe files or folders, semicolon-separated) that launch_app may start. Without it, launch_app starts nothing.",
           "isRequired": false
         },
         {
